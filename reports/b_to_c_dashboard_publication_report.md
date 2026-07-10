@@ -1,8 +1,10 @@
 # PDX-DASH-28 B-to-C Dashboard Publication Report
 
 Status: S07 local non-Git status generation and S08 public-safe rendering
-validated; S09 final dashboard output is a reviewed publication candidate.
-GitHub Pages remains unconfigured until the S09 PR is merged and reread.
+validated; S09 final dashboard output merged through PR #2 at
+`87356efeb37ab6a275e249e3e8e3b577128f5f55`. The first S04 private-first Pages
+request stopped safely at HTTP 422. Repository visibility remains private,
+Pages remains unconfigured, and S10 has not started.
 
 This report is support input only. It does not decide acceptance, closure,
 priority, next work, dispatch, merge readiness, Pages readiness, completion,
@@ -14,6 +16,10 @@ or product authority.
 - `PDX-DASH-28-S07`: generate one sanitized status snapshot outside Git
 - `PDX-DASH-28-S08`: render public-safe static dashboard output locally
 - `PDX-DASH-28-S09`: submit final HTML, CSS, and this root report through a PR
+- `PDX-DASH-28-S04`: configure Pages source, including the recorded private
+  visibility gate
+- `PDX-DASH-28-S10`: verify the eventual public URL and artifact boundary;
+  not started
 
 ## S07 input and output boundary
 
@@ -85,7 +91,9 @@ card to `Projection` / `Public-safe` and updated this report to say
 with no remaining blocker. That result is support evidence only and does not
 decide acceptance, merge readiness, or merge.
 
-PR publication-time gates are:
+S09 PR #2 merged at
+`87356efeb37ab6a275e249e3e8e3b577128f5f55`. Before merge, its recorded
+publication-time gates were:
 
 1. independent targeted read-only review passes;
 2. WorkItem-level manager routes final PASS;
@@ -95,24 +103,71 @@ PR publication-time gates are:
 
 ## Pages state
 
-Pages is intentionally unconfigured at this stage. Source configuration as
-`main:/docs` belongs to `PDX-DASH-28-S04` only after the S09 PR is merged and
-the merged backlog state is reread. No placeholder page or deployment
-workflow is used.
+S04 began only after S09 PR #2 merged and the merged state was reread. The
+private-first request used exactly branch `main` and path `/docs`.
+
+- First Pages POST result: HTTP 422, safely stopped
+- GitHub reason: current plan does not support Pages for this private
+  repository
+- Repository visibility after the response: private
+- Pages GET state: unconfigured
+- Candidate public URL before configuration:
+  `https://knmnt.github.io/backlog_ambiguity_dashboard/` returned HTTP 404
+- Fallback action: none
+
+No visibility, Pages source, workflow, credential, or other repository setting
+was changed by the failed request.
+
+## Reachable-history and current-boundary result
+
+The full reachable-history public-safety scan passed:
+
+- reachable commits scanned: `5`;
+- reachable blobs scanned: `9`;
+- binary blobs: `0`;
+- sensitive filenames: `0`;
+- public-safety findings: `0`.
+
+The current tracked inventory contains eight files: root `README.md` and
+`.gitignore`, two root contracts, two root reports, and exactly these two Pages
+candidate files:
+
+- `docs/index.html`
+- `docs/assets/dashboard.css`
+
+The current boundary scan records zero workflow files and zero tracked status
+snapshots, inboxes, workdirs, or other local inputs. Reports and contracts
+remain outside `docs/`.
+
+## Exact bounded proposed next action
+
+Only after this visibility-gate report merges and the merged state is reread,
+the proposed S04 continuation is:
+
+1. change repository visibility to public solely because the private-first
+   Pages request explicitly returned the HTTP 422 plan requirement;
+2. reverify visibility, current inventory, full reachable history, and the
+   `docs/` public boundary;
+3. retry Pages creation exactly once with source `main:/docs`;
+4. stop and record the result without changing any other setting.
+
+This is a bounded proposal, not a claim that visibility changed or Pages was
+configured.
 
 ## Dependency-Eligible Work Without Ranking
 
-After the S09 PR merges and its result is reread, `PDX-DASH-28-S04` becomes
-dependency-eligible for the bounded GitHub Pages source-setting action. This
-is dependency eligibility only. It is not priority, dispatch, acceptance,
-closure, merge readiness, or product authority.
+After this visibility-gate report merges and its result is reread, only the
+bounded S04 continuation above becomes dependency-eligible. S10 remains
+blocked until Pages is configured and a public URL is available for
+verification. This is dependency eligibility only. It is not priority,
+dispatch, acceptance, closure, merge readiness, or product authority.
 
 ## Assumptions
 
 - The validated local snapshot is retained only through bounded rendering,
   review, and durable fact recording.
-- GitHub Pages capability and any visibility requirement are checked only
-  after S09 merge.
+- Public visibility is considered only because the private-first Pages API
+  response explicitly identified the repository plan/visibility requirement.
 - Repository source records remain authoritative over both the local snapshot
   and rendered HTML.
 
@@ -122,9 +177,11 @@ closure, merge readiness, or product authority.
   operational config reader. A transient non-committed process built the
   authorized local snapshot, which was then checked with the existing
   public-status and local-ingestion checkers.
-- Private-repository Pages capability remains unresolved until S04. If Pages
-  cannot be configured safely, publication stops and the pending reason is
-  recorded.
+- Public visibility would expose the repository and its reachable history,
+  not only the future Pages source. The full-history scan passed, but it must
+  be rerun immediately after any authorized visibility change.
+- Pages may still fail after a public visibility change. The bounded retry is
+  once only; any failure stops without another fallback.
 - No deviation expands workflow, automation, credential, cleanup, or product
   authority.
 
@@ -136,6 +193,7 @@ closure, merge readiness, or product authority.
   on-merge behavior was changed.
 - No Pages, visibility, branch-protection, required-check, token, secret, or
   credential setting was changed.
+- No fallback followed the private-first HTTP 422 response.
 - No cross-repository downloader or artifact lookup automation was added.
 - No accepted-resolution record, active ambiguity case, authority patch,
   cleanup result, D66.200+ declaration, product-complete claim, raw transcript,
