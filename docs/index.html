@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Pecodex sample repository status</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to status</a>
+    <header class="site-header">
+      <div class="shell header-row">
+        <p class="product-mark">Pecodex</p>
+        <p class="environment-label">Verification dashboard</p>
+      </div>
+    </header>
+
+    <main id="main-content" class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Public-safe sample projection</p>
+          <h1 id="page-title">Sample repository status</h1>
+          <p class="lede">
+            A compact, read-only view of a bounded verification sample.
+          </p>
+        </div>
+        <span class="status-pill status-pill--ready">Validated snapshot</span>
+      </section>
+
+      <aside class="boundary-notice" aria-label="Authority boundary">
+        <strong>Display-only projection.</strong>
+        Repository records remain the source. This page does not decide
+        acceptance, priority, closure, or next work.
+      </aside>
+
+      <section class="summary-grid" aria-label="Status summary">
+        <article class="summary-card">
+          <p class="card-label">Repository</p>
+          <p class="card-value card-value--repo">knmnt/backlog_ambiguity_sample_repo</p>
+          <p class="card-note">Verification-only concrete repository</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-label">Snapshot freshness</p>
+          <p class="card-value">Fresh</p>
+          <p class="card-note">Freshness check passed at validation</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-label">Validation</p>
+          <p class="card-value">Passed</p>
+          <p class="card-note">Fail-closed status and ingestion checks</p>
+        </article>
+        <article class="summary-card">
+          <p class="card-label">Projection</p>
+          <p class="card-value">Public-safe</p>
+          <p class="card-note">Static summary fields only</p>
+        </article>
+      </section>
+
+      <section class="panel" aria-labelledby="gate-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">High-level next gate</p>
+            <h2 id="gate-title">Dashboard publication review</h2>
+          </div>
+          <span class="status-pill status-pill--review">Review required</span>
+        </div>
+        <p>
+          Independent review and publication-boundary checks remain before
+          Pages configuration.
+        </p>
+        <dl class="projection-state">
+          <dt>Projection state</dt>
+          <dd data-projection-state="candidate_requires_review">
+            Candidate — review required
+          </dd>
+        </dl>
+      </section>
+
+      <section class="panel" aria-labelledby="sources-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Sanitized trace</p>
+            <h2 id="sources-title">Source references</h2>
+          </div>
+          <span class="source-count">3 repository-relative references</span>
+        </div>
+        <ul class="source-list">
+          <li><code>docs/00_foundation/pecodex_concrete_repo_identity.md</code></li>
+          <li><code>docs/04_contracts/pecodex_public_status_v1_support_schema.yaml</code></li>
+          <li><code>docs/09_roadmap/pdx_dash_28_sample_repo_bootstrap_report.md</code></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-row">
+        <p>Generated from a validated local, non-Git snapshot.</p>
+        <p>
+          Snapshot time:
+          <time datetime="2026-07-10T14:39:43+09:00">2026-07-10 14:39 JST</time>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
