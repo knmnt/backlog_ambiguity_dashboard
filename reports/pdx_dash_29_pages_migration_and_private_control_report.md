@@ -74,3 +74,22 @@ are excluded from this report.
 
 These statements are dependency and boundary records only, not priority,
 dispatch, acceptance, closure, merge authority, or publication authority.
+
+## S09 Old Pages Closure
+
+Before S09, the old dashboard Pages site was built from legacy `main:/docs`
+with HTTPS enabled. The bounded Pages DELETE operation returned HTTP 204.
+
+After the operation, the old Pages API returned HTTP 404 and the old canonical
+URL returned HTTP 404 with no redirect. The new public Pages site remains
+legacy `main:/docs`, HTTPS-enabled, built, with root and stylesheet HTTP 200
+and the tested forbidden routes HTTP 404.
+
+The old dashboard repository remains `PUBLIC` on default `main`, at head
+`56f44e6`, with tree and reachable history unchanged and open pull requests at
+zero. No repository visibility, tree, history, report, or contract deletion
+occurred.
+
+S10 may change old-repository visibility only after this report PR merges and
+the relevant backlog and repository state are reread. Raw responses, local
+paths, validator output, and evaluator working detail are excluded.
