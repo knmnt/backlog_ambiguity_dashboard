@@ -1,0 +1,17 @@
+# Local dashboard inputs and work products; never commit.
+inbox/
+work/
+.pecodex_dashboard/inbox/
+.pecodex_dashboard/work/
+*.local.yaml
+*.snapshot.yaml
+pecodex_public_status.v1.yaml
+pecodex-public-status-v1__*.yaml
+
+# Local tool and editor artifacts.
+__pycache__/
+.pytest_cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
